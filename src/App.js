@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./home";
 import Login from "./Login";
 import Register from "./Register";
@@ -34,18 +34,14 @@ import Appointment_pg from "./appointments_pg";
 function App() {
   return (
     <div className="app">
-      <Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/sign_in" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/reset" component={Reset} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route
-            exact
-            path="/dashboard_dentist"
-            component={Dashboard_dentist}
-          />
+          <Route exact path="/dashboard_dentist" component={Dashboard_dentist} />
           <Route exact path="/settings" component={settings_page} />
           <Route exact path="/profile_pg_dentist" component={profile_pg_dentist} />
           <Route exact path="/profile_pg_gen" component={profile_pg_gen} />
@@ -72,7 +68,7 @@ function App() {
           <Route exact path="/appointments" component={Appointment_pg} />
           <Route exact path="/signup_general_user" component={signup_general_user} />
         </Switch>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
