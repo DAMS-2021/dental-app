@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/dental-app/static/css/main.7787ffd8.chunk.css",
+    "main.js": "/dental-app/static/js/main.a997f84e.chunk.js",
+    "main.js.map": "/dental-app/static/js/main.a997f84e.chunk.js.map",
+    "runtime-main.js": "/dental-app/static/js/runtime-main.9f418ddb.js",
+    "runtime-main.js.map": "/dental-app/static/js/runtime-main.9f418ddb.js.map",
+    "static/css/2.7d31e46d.chunk.css": "/dental-app/static/css/2.7d31e46d.chunk.css",
+    "static/js/2.5d0c02e2.chunk.js": "/dental-app/static/js/2.5d0c02e2.chunk.js",
+    "static/js/2.5d0c02e2.chunk.js.map": "/dental-app/static/js/2.5d0c02e2.chunk.js.map",
+    "static/js/3.803aebec.chunk.js": "/dental-app/static/js/3.803aebec.chunk.js",
+    "static/js/3.803aebec.chunk.js.map": "/dental-app/static/js/3.803aebec.chunk.js.map",
+    "index.html": "/dental-app/index.html",
+    "static/css/2.7d31e46d.chunk.css.map": "/dental-app/static/css/2.7d31e46d.chunk.css.map",
+    "static/css/main.7787ffd8.chunk.css.map": "/dental-app/static/css/main.7787ffd8.chunk.css.map",
+    "static/js/2.5d0c02e2.chunk.js.LICENSE.txt": "/dental-app/static/js/2.5d0c02e2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f418ddb.js",
+    "static/css/2.7d31e46d.chunk.css",
+    "static/js/2.5d0c02e2.chunk.js",
+    "static/css/main.7787ffd8.chunk.css",
+    "static/js/main.a997f84e.chunk.js"
+  ]
+}
