@@ -36,7 +36,7 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route exact path="/DAMS" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/sign_in" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/reset" component={Reset} />
