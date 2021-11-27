@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { app, signInWithGoogle } from "./firebase1";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
+import emailjs from 'emailjs-com';
 // import React from 'react';
 import "./signup_dentist_general-k.css";
 
@@ -39,9 +40,13 @@ function Signup_dentist() {
     });
   };
 
+  function send_mail(e){
+    emailjs.sendForm('service_1ud79hh', 'template_rkggkel', e.target, 'user_ltuV3DVfrQWmCNaOtW76f');
+  };
+
   useEffect(() => {
     if (loading) return;
-    if (user) history.replace("/dashboard?email=" + email);
+    if (user) history.replace("/dashboard_dentist?email=" + email);
   }, [user, loading]);
 
   return (
@@ -72,7 +77,7 @@ function Signup_dentist() {
                 className="signup_inputfield_"
                 type="text"
                 placeholder="Enter your Name"
-                name="name"
+                name="name_dams"
                 required
                 onChange={(e) => setName(e.target.value)}
               />
@@ -85,7 +90,7 @@ function Signup_dentist() {
                 className="signup_inputfield_"
                 type="text"
                 placeholder="Enter your Email"
-                name="email"
+                name="email_dams"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -226,7 +231,7 @@ function Signup_dentist() {
             <button
               className="su_button"
               type="submit"
-              onClick={signup_dentist}
+              onClick={(e) => {signup_dentist(); send_mail(e);}}
             >
               Sign Up
             </button>
