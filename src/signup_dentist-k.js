@@ -38,10 +38,16 @@ function Signup_dentist() {
         doc_age: age,
       });
     });
+    send_mail();
   };
 
-  function send_mail(e){
-    emailjs.sendForm('service_1ud79hh', 'template_rkggkel', e.target, 'user_ltuV3DVfrQWmCNaOtW76f');
+  function send_mail(){
+    var mail = document.getElementById('email_dams');
+    var name = document.getElementById('name_dams');
+    emailjs.send('service_1ud79hh','template_rkggkel',{
+      name_dams: name.value,
+      email_dams: mail.value,
+      }, 'user_ltuV3DVfrQWmCNaOtW76f');
   };
 
   useEffect(() => {
@@ -74,10 +80,11 @@ function Signup_dentist() {
             <label for="name">
               <b>Name</b>
               <input
+                id = "name_dams"
                 className="signup_inputfield_"
                 type="text"
                 placeholder="Enter your Name"
-                name="name_dams"
+                name="name"
                 required
                 onChange={(e) => setName(e.target.value)}
               />
@@ -87,10 +94,11 @@ function Signup_dentist() {
             <label for="email">
               <b>Email-id</b>
               <input
+                id = "email_dams"
                 className="signup_inputfield_"
                 type="text"
                 placeholder="Enter your Email"
-                name="email_dams"
+                name="email"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -231,7 +239,7 @@ function Signup_dentist() {
             <button
               className="su_button"
               type="submit"
-              onClick={(e) => {signup_dentist(); send_mail(e);}}
+              onClick={signup_dentist}
             >
               Sign Up
             </button>
