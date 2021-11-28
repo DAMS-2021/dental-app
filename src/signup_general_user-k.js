@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { app, signInWithGoogle } from "./firebase1";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
+import emailjs from 'emailjs-com';
 import "./signup_dentist_general-k.css";
 
 function Signup_general_user() {
@@ -32,6 +33,16 @@ function Signup_general_user() {
         gn_user_doc_age: age,
       });
     });
+    send_mail();
+  };
+
+  function send_mail(){
+    var mail = document.getElementById('email_dams');
+    var name = document.getElementById('name_dams');
+    emailjs.send('service_1ud79hh','template_ks8ukyd',{
+      name_dams: name.value,
+      email_dams: mail.value,
+      }, 'user_ltuV3DVfrQWmCNaOtW76f');
   };
 
   useEffect(() => {
@@ -57,6 +68,7 @@ function Signup_general_user() {
             <b>Name</b>
             <input
               className="signup_inputfield_"
+              id = "name_dams"
               type="text"
               placeholder="Enter your Name"
               name="name"
@@ -70,6 +82,7 @@ function Signup_general_user() {
             <b>Email-id</b>
             <input
               className="signup_inputfield_"
+              id = "email_dams"
               type="text"
               placeholder="Enter your Email"
               name="email"

@@ -20,6 +20,8 @@ import {
 } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { app } from "./firebase1";
+import emailjs from 'emailjs-com';
+
 
 //import icons from react icons
 import { FaCalendar, FaCalendarCheck, FaStar, FaUser } from "react-icons/fa";
@@ -483,6 +485,7 @@ function Dashboard() {
       alert(
         "booking request has been sent please donot click on the same button again"
       );
+      
     }
 
     var f = document.getElementById("mon_a");
@@ -492,6 +495,14 @@ function Dashboard() {
       doc_m1_req: true,
       doc_m1_prob: a.value,
     });
+
+    emailjs.send('service_1ud79hh','template_ks8ukyd',{
+      email_dams: doc_email,
+      msg_dams: a.value,
+      patient_dams: patient_email,
+      time_dams: det.textContent,
+      date_dams: date.value
+      }, 'user_ltuV3DVfrQWmCNaOtW76f');
   };
 
   const book_mon_b = () => {

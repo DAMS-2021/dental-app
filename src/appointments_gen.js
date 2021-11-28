@@ -44,6 +44,8 @@ function Appointmentsgen() {
     console.log(m1_id);
     updateDoc(doc(db, "doc", m1_id), {
       doc_m1_prob: "",
+      doc_m1_bkd: false,
+      doc_m1_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -60,6 +62,8 @@ function Appointmentsgen() {
     console.log(m2_id);
     updateDoc(doc(db, "doc", m2_id), {
       doc_m2_prob: "",
+      doc_m2_bkd: false,
+      doc_m2_req: false
     });
     alert("your appointment has been cancelled successfully");
   };
@@ -76,6 +80,8 @@ function Appointmentsgen() {
     var m3_id = document.getElementById("mon3_id").textContent;
     updateDoc(doc(db, "doc", m3_id), {
       doc_m3_prob: "",
+      doc_m3_bkd: false,
+      doc_m3_req: false
     });
     alert("your appointment has been cancelled successfully");
   };
@@ -90,6 +96,8 @@ function Appointmentsgen() {
     var tue1_id = document.getElementById("tue1_id").textContent;
     updateDoc(doc(db, "doc", tue1_id), {
       doc_tu1_prob: "",
+      doc_tu1_bkd: false,
+      doc_tu1_req: false
     });
     alert("your appointment has been cancelled successfully");
   };
@@ -105,6 +113,8 @@ function Appointmentsgen() {
     var tue2_id = document.getElementById("tue2_id").textContent;
     updateDoc(doc(db, "doc", tue2_id), {
       doc_tu2_prob: "",
+      doc_tu2_bkd: false,
+      doc_tu2_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -121,6 +131,8 @@ function Appointmentsgen() {
     var tue3_id = document.getElementById("tue3_id").textContent;
     updateDoc(doc(db, "doc", tue3_id), {
       doc_tu3_prob: "",
+      doc_tu3_bkd: false,
+      doc_tu3_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -137,6 +149,8 @@ function Appointmentsgen() {
     var wed1_id = document.getElementById("wed1_id").textContent;
     updateDoc(doc(db, "doc", wed1_id), {
       doc_w1_prob: "",
+      doc_w1_bkd: false,
+      doc_w1_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -153,6 +167,8 @@ function Appointmentsgen() {
     var wed2_id = document.getElementById("wed2_id").textContent;
     updateDoc(doc(db, "doc", wed2_id), {
       doc_w2_prob: "",
+      doc_w2_bkd: false,
+      doc_w2_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -169,6 +185,8 @@ function Appointmentsgen() {
     var wed3_id = document.getElementById("wed3_id").textContent;
     updateDoc(doc(db, "doc", wed3_id), {
       doc_w3_prob: "",
+      doc_w3_bkd: false,
+      doc_w3_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -185,6 +203,8 @@ function Appointmentsgen() {
     var thu1_id = document.getElementById("thu1_id").textContent;
     updateDoc(doc(db, "doc", thu1_id), {
       doc_th1_prob: "",
+      doc_th1_bkd: false,
+      doc_th1_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -201,6 +221,8 @@ function Appointmentsgen() {
     var thu2_id = document.getElementById("thu2_id").textContent;
     updateDoc(doc(db, "doc", thu2_id), {
       doc_th2_prob: "",
+      doc_th2_bkd: false,
+      doc_th2_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -217,6 +239,8 @@ function Appointmentsgen() {
     var thu3_id = document.getElementById("thu3_id").textContent;
     updateDoc(doc(db, "doc", thu3_id), {
       doc_th3_prob: "",
+      doc_th3_bkd: false,
+      doc_th3_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -233,6 +257,8 @@ function Appointmentsgen() {
     var fri1_id = document.getElementById("fri1_id").textContent;
     updateDoc(doc(db, "doc", fri1_id), {
       doc_f1_prob: "",
+      doc_f1_bkd: false,
+      doc_f1_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -249,6 +275,8 @@ function Appointmentsgen() {
     var fri2_id = document.getElementById("fri2_id").textContent;
     updateDoc(doc(db, "doc", fri2_id), {
       doc_f2_prob: "",
+      doc_f2_bkd: false,
+      doc_f2_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -265,6 +293,8 @@ function Appointmentsgen() {
     var fri3_id = document.getElementById("fri3_id").textContent;
     updateDoc(doc(db, "doc", fri3_id), {
       doc_f3_prob: "",
+      doc_f3_bkd: false,
+      doc_f3_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -281,6 +311,8 @@ function Appointmentsgen() {
     var sat1_id = document.getElementById("sat1_id").textContent;
     updateDoc(doc(db, "doc", sat1_id), {
       doc_sa1_prob: "",
+      doc_sa1_bkd: false,
+      doc_sa1_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -297,6 +329,8 @@ function Appointmentsgen() {
     var sat2_id = document.getElementById("sat2_id").textContent;
     updateDoc(doc(db, "doc", sat2_id), {
       doc_sa2_prob: "",
+      doc_sa2_bkd: false,
+      doc_sa2_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -313,6 +347,8 @@ function Appointmentsgen() {
     var sat3_id = document.getElementById("sat3_id").textContent;
     updateDoc(doc(db, "doc", sat3_id), {
       doc_sa3_prob: "",
+      doc_sa3_bkd: false,
+      doc_sa3_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -329,6 +365,8 @@ function Appointmentsgen() {
     var sun1_id = document.getElementById("sun1_id").textContent;
     updateDoc(doc(db, "doc", sun1_id), {
       doc_su1_prob: "",
+      doc_su1_bkd: false,
+      doc_su1_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -345,6 +383,8 @@ function Appointmentsgen() {
     var sun2_id = document.getElementById("sun2_id").textContent;
     updateDoc(doc(db, "doc", sun2_id), {
       doc_su2_prob: "",
+      doc_su2_bkd: false,
+      doc_su2_req: false
     });
 
     alert("your appointment has been cancelled successfully");
@@ -361,6 +401,8 @@ function Appointmentsgen() {
     var sun3_id = document.getElementById("sun3_id").textContent;
     updateDoc(doc(db, "doc", sun3_id), {
       doc_su3_prob: "",
+      doc_su3_bkd: false,
+      doc_su3_req: false
     });
 
     alert("your appointment has been cancelled successfully");
