@@ -35,7 +35,7 @@ import "react-pro-sidebar/dist/css/styles.css";
 function Dashboard() {
   const auth = getAuth(app);
   const db = getFirestore(app);
-  
+
   //create initial menuCollapse state using useState hook
   const [menuCollapse, setMenuCollapse] = useState(true);
 
@@ -67,9 +67,9 @@ function Dashboard() {
 
   const [info, setInfo] = useState([]);
 
-  var doc_name="";
-  var doc_email="";
-  var doc_id="";
+  var doc_name = "";
+  var doc_email = "";
+  var doc_id = "";
 
   useEffect(
     () =>
@@ -462,20 +462,27 @@ function Dashboard() {
 
   const book_mon_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("mon_a");
+    console.log(user);
     var date = document.getElementById("mon_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         mon_1_name: doc_name,
         mon_1_email: doc_email,
         mon_1_time: det.textContent,
         mon_1_date: date.value,
-        mon_1_id: det.value
+        mon_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        mon_1_patient_email: patient_email,
+        mon_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("mon_a");
@@ -489,20 +496,26 @@ function Dashboard() {
 
   const book_mon_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("mon_b");
     var date = document.getElementById("mon_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         mon_2_name: doc_name,
         mon_2_email: doc_email,
         mon_2_time: det.textContent,
         mon_2_date: date.value,
-        mon_2_id: det.value
+        mon_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        mon_2_patient_email: patient_email,
+        mon_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("mon_b");
@@ -516,20 +529,26 @@ function Dashboard() {
 
   const book_mon_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("mon_c");
     var date = document.getElementById("mon_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         mon_3_name: doc_name,
         mon_3_email: doc_email,
         mon_3_time: det.textContent,
         mon_3_date: date.value,
-        mon_3_id: det.value
+        mon_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        mon_3_patient_email: patient_email,
+        mon_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("mon_c");
@@ -543,20 +562,26 @@ function Dashboard() {
 
   const book_tue_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("tue_a");
     var date = document.getElementById("tue_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         tue_1_name: doc_name,
         tue_1_email: doc_email,
         tue_1_time: det.textContent,
         tue_1_date: date.value,
-        tue_1_id: det.value
+        tue_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        tue_1_patient_email: patient_email,
+        tue_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("tue_a");
@@ -570,20 +595,26 @@ function Dashboard() {
 
   const book_tue_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("tue_b");
     var date = document.getElementById("tue_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         tue_2_name: doc_name,
         tue_2_email: doc_email,
         tue_2_time: det.textContent,
         tue_2_date: date.value,
-        tue_2_id: det.value
+        tue_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        tue_2_patient_email: patient_email,
+        tue_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("tue_b");
@@ -597,20 +628,26 @@ function Dashboard() {
 
   const book_tue_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("tue_c");
     var date = document.getElementById("tue_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         tue_3_name: doc_name,
         tue_3_email: doc_email,
         tue_3_time: det.textContent,
         tue_3_date: date.value,
-        tue_3_id: det.value
+        tue_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        tue_3_patient_email: patient_email,
+        tue_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("tue_c");
@@ -624,20 +661,26 @@ function Dashboard() {
 
   const book_wed_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("wed_a");
     var date = document.getElementById("wed_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         wed_1_name: doc_name,
         wed_1_email: doc_email,
         wed_1_time: det.textContent,
         wed_1_date: date.value,
-        wed_1_id: det.value
+        wed_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        wed_1_patient_email: patient_email,
+        wed_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("wed_a");
@@ -651,20 +694,26 @@ function Dashboard() {
 
   const book_wed_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("wed_b");
     var date = document.getElementById("wed_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         wed_2_name: doc_name,
         wed_2_email: doc_email,
         wed_2_time: det.textContent,
         wed_2_date: date.value,
-        wed_2_id: det.value
+        wed_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        wed_2_patient_email: patient_email,
+        wed_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("wed_b");
@@ -678,20 +727,26 @@ function Dashboard() {
 
   const book_wed_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("wed_c");
     var date = document.getElementById("wed_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         wed_3_name: doc_name,
         wed_3_email: doc_email,
         wed_3_time: det.textContent,
         wed_3_date: date.value,
-        wed_3_id: det.value
+        wed_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        wed_3_patient_email: patient_email,
+        wed_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("wed_c");
@@ -705,20 +760,26 @@ function Dashboard() {
 
   const book_thu_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("thu_a");
     var date = document.getElementById("thu_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         thu_1_name: doc_name,
         thu_1_email: doc_email,
         thu_1_time: det.textContent,
         thu_1_date: date.value,
-        thu_1_id: det.value
+        thu_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        thur_1_patient_email: patient_email,
+        thur_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("thu_a");
@@ -732,20 +793,26 @@ function Dashboard() {
 
   const book_thu_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("thu_b");
     var date = document.getElementById("thu_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         thu_2_name: doc_name,
         thu_2_email: doc_email,
         thu_2_time: det.textContent,
         thu_2_date: date.value,
-        thu_2_id: det.value
+        thu_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        thur_2_patient_email: patient_email,
+        thur_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("thu_b");
@@ -759,20 +826,26 @@ function Dashboard() {
 
   const book_thu_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("thu_c");
     var date = document.getElementById("thu_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         thu_3_name: doc_name,
         thu_3_email: doc_email,
         thu_3_time: det.textContent,
         thu_3_date: date.value,
-        thu_3_id: det.value
+        thu_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        thur_3_patient_email: patient_email,
+        thur_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("thu_c");
@@ -786,20 +859,26 @@ function Dashboard() {
 
   const book_fri_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("fri_a");
     var date = document.getElementById("fri_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         fri_1_name: doc_name,
         fri_1_email: doc_email,
         fri_1_time: det.textContent,
         fri_1_date: date.value,
-        fri_1_id: det.value
+        fri_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        fri_1_patient_email: patient_email,
+        fri_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("fri_a");
@@ -813,20 +892,26 @@ function Dashboard() {
 
   const book_fri_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("fri_b");
     var date = document.getElementById("fri_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         fri_2_name: doc_name,
         fri_2_email: doc_email,
         fri_2_time: det.textContent,
         fri_2_date: date.value,
-        fri_2_id: det.value
+        fri_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        fri_2_patient_email: patient_email,
+        fri_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("fri_b");
@@ -840,20 +925,26 @@ function Dashboard() {
 
   const book_fri_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("fri_c");
     var date = document.getElementById("fri_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         fri_3_name: doc_name,
         fri_3_email: doc_email,
         fri_3_time: det.textContent,
         fri_3_date: date.value,
-        fri_3_id: det.value
+        fri_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        fri_3_patient_email: patient_email,
+        fri_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("fri_c");
@@ -867,20 +958,26 @@ function Dashboard() {
 
   const book_sat_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("sat_a");
     var date = document.getElementById("sat_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         sat_1_name: doc_name,
         sat_1_email: doc_email,
         sat_1_time: det.textContent,
         sat_1_date: date.value,
-        sat_1_id: det.value
+        sat_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        sat_1_patient_email: patient_email,
+        sat_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("sat_a");
@@ -894,20 +991,26 @@ function Dashboard() {
 
   const book_sat_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("sat_b");
     var date = document.getElementById("sat_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         sat_2_name: doc_name,
         sat_2_email: doc_email,
         sat_2_time: det.textContent,
         sat_2_date: date.value,
-        sat_2_id: det.value
+        sat_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        sat_2_patient_email: patient_email,
+        sat_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("sat_b");
@@ -921,20 +1024,26 @@ function Dashboard() {
 
   const book_sat_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("sat_c");
     var date = document.getElementById("sat_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         sat_3_name: doc_name,
         sat_3_email: doc_email,
         sat_3_time: det.textContent,
         sat_3_date: date.value,
-        sat_3_id: det.value
+        sat_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        sat_3_patient_email: patient_email,
+        sat_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("sat_c");
@@ -948,20 +1057,26 @@ function Dashboard() {
 
   const book_sun_a = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("sun_a");
     var date = document.getElementById("sun_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         sun_1_name: doc_name,
         sun_1_email: doc_email,
         sun_1_time: det.textContent,
         sun_1_date: date.value,
-        sun_1_id: det.value
+        sun_1_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        sun_1_patient_email: patient_email,
+        sun_1_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("sun_a");
@@ -975,20 +1090,26 @@ function Dashboard() {
 
   const book_sun_b = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("sun_b");
     var date = document.getElementById("sun_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         sun_2_name: doc_name,
         sun_2_email: doc_email,
         sun_2_time: det.textContent,
         sun_2_date: date.value,
-        sun_2_id: det.value
+        sun_2_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        sun_2_patient_email: patient_email,
+        sun_2_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("sun_b");
@@ -1002,20 +1123,26 @@ function Dashboard() {
 
   const book_sun_c = () => {
     var user = auth.currentUser.uid;
+    var patient_email = auth.currentUser.email;
     var det = document.getElementById("sun_c");
     var date = document.getElementById("sun_date");
-    if (det.value === "undefined" || det.value === ""){
+    if (det.value === "undefined" || det.value === "") {
       alert("Slot not set yet, please try another slot that is set/not booked");
-    }
-    else{
+    } else {
       updateDoc(doc(db, "gn_user_doc", user), {
         sun_3_name: doc_name,
         sun_3_email: doc_email,
         sun_3_time: det.textContent,
         sun_3_date: date.value,
-        sun_3_id: det.value
+        sun_3_id: det.value,
       });
-      alert("booking request has been sent please donot click on the same button again")
+      updateDoc(doc(db, "doc", det.value), {
+        sun_3_patient_email: patient_email,
+        sun_3_patient_id: user,
+      });
+      alert(
+        "booking request has been sent please donot click on the same button again"
+      );
     }
 
     var f = document.getElementById("sun_c");
@@ -1026,7 +1153,6 @@ function Dashboard() {
       doc_su3_prob: a.value,
     });
   };
-
 
   return (
     <div>
@@ -1047,7 +1173,9 @@ function Dashboard() {
                 <Link to={"/profile_pg_gen?email=" + email}>Profile</Link>
               </MenuItem>
               <MenuItem icon={<FaCalendar />}>
-                <Link to={"/appointments_gen?email=" + email}>Appointments</Link>
+                <Link to={"/appointments_gen?email=" + email}>
+                  Appointments
+                </Link>
               </MenuItem>
               <MenuItem icon={<FaCalendarCheck />}>Follow-Ups</MenuItem>
               <MenuItem icon={<FaStar />}>Reviews</MenuItem>
@@ -1178,16 +1306,29 @@ function Dashboard() {
                       ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="mon_b" onClick={book_mon_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="mon_b"
+                        onClick={book_mon_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="mon_c" onClick={book_mon_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="mon_c"
+                        onClick={book_mon_c}
+                      ></button>
                     </td>
                   </tr>
                 </table>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-18" id="mon_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-18"
+                  id="mon_date"
+                ></input>
               </td>
             </tr>
 
@@ -1197,19 +1338,36 @@ function Dashboard() {
                 <tabl>
                   <tr>
                     <td>
-                      <button className="dsh_time" id="tue_a" onClick={book_tue_a}></button>
+                      <button
+                        className="dsh_time"
+                        id="tue_a"
+                        onClick={book_tue_a}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="tue_b" onClick={book_tue_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="tue_b"
+                        onClick={book_tue_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="tue_c" onClick={book_tue_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="tue_c"
+                        onClick={book_tue_c}
+                      ></button>
                     </td>
                   </tr>
                 </tabl>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-19" id="tue_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-19"
+                  id="tue_date"
+                ></input>
               </td>
             </tr>
 
@@ -1219,19 +1377,36 @@ function Dashboard() {
                 <tabl>
                   <tr>
                     <td>
-                      <button className="dsh_time" id="wed_a" onClick={book_wed_a}></button>
+                      <button
+                        className="dsh_time"
+                        id="wed_a"
+                        onClick={book_wed_a}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="wed_b" onClick={book_wed_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="wed_b"
+                        onClick={book_wed_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="wed_c" onClick={book_wed_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="wed_c"
+                        onClick={book_wed_c}
+                      ></button>
                     </td>
                   </tr>
                 </tabl>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-20" id="wed_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-20"
+                  id="wed_date"
+                ></input>
               </td>
             </tr>
 
@@ -1241,19 +1416,36 @@ function Dashboard() {
                 <tabl>
                   <tr>
                     <td>
-                      <button className="dsh_time" id="thu_a" onClick={book_thu_a}></button>
+                      <button
+                        className="dsh_time"
+                        id="thu_a"
+                        onClick={book_thu_a}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="thu_b" onClick={book_thu_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="thu_b"
+                        onClick={book_thu_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="thu_c" onClick={book_thu_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="thu_c"
+                        onClick={book_thu_c}
+                      ></button>
                     </td>
                   </tr>
                 </tabl>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-21" id="thu_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-21"
+                  id="thu_date"
+                ></input>
               </td>
             </tr>
 
@@ -1263,19 +1455,36 @@ function Dashboard() {
                 <tabl>
                   <tr>
                     <td>
-                      <button className="dsh_time" id="fri_a" onClick={book_fri_a}></button>
+                      <button
+                        className="dsh_time"
+                        id="fri_a"
+                        onClick={book_fri_a}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="fri_b" onClick={book_fri_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="fri_b"
+                        onClick={book_fri_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="fri_c" onClick={book_fri_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="fri_c"
+                        onClick={book_fri_c}
+                      ></button>
                     </td>
                   </tr>
                 </tabl>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-22" id="fri_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-22"
+                  id="fri_date"
+                ></input>
               </td>
             </tr>
 
@@ -1285,19 +1494,36 @@ function Dashboard() {
                 <tabl>
                   <tr>
                     <td>
-                      <button className="dsh_time" id="sat_a" onClick={book_sat_a}></button>
+                      <button
+                        className="dsh_time"
+                        id="sat_a"
+                        onClick={book_sat_a}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="sat_b" onClick={book_sat_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="sat_b"
+                        onClick={book_sat_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="sat_c" onClick={book_sat_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="sat_c"
+                        onClick={book_sat_c}
+                      ></button>
                     </td>
                   </tr>
                 </tabl>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-16" id="sat_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-16"
+                  id="sat_date"
+                ></input>
               </td>
             </tr>
 
@@ -1307,19 +1533,36 @@ function Dashboard() {
                 <tabl>
                   <tr>
                     <td>
-                      <button className="dsh_time" id="sun_a" onClick={book_sun_a}></button>
+                      <button
+                        className="dsh_time"
+                        id="sun_a"
+                        onClick={book_sun_a}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="sun_b" onClick={book_sun_b}></button>
+                      <button
+                        className="dsh_time"
+                        id="sun_b"
+                        onClick={book_sun_b}
+                      ></button>
                     </td>
                     <td>
-                      <button className="dsh_time" id="sun_c" onClick={book_sun_c}></button>
+                      <button
+                        className="dsh_time"
+                        id="sun_c"
+                        onClick={book_sun_c}
+                      ></button>
                     </td>
                   </tr>
                 </tabl>
               </td>
               <td>
-                <input type="date" step="7" min="2021-10-17" id="sun_date"></input>
+                <input
+                  type="date"
+                  step="7"
+                  min="2021-10-17"
+                  id="sun_date"
+                ></input>
               </td>
             </tr>
           </table>
