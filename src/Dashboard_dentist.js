@@ -637,16 +637,14 @@ function Dashboard_dentist() {
               <MenuItem icon={<FaUser />}>
                 <Link to={"/profile_pg_dentist?email=" + email}>Profile</Link>
               </MenuItem>
-              <MenuItem icon={<FaCalendar />}>
-                <Link to={"/appointments?email=" + email}>Appointment</Link>
+              <MenuItem icon={<FaCalendarCheck />}>
+                <Link to={"/appointments?email=" + email}>Appointments</Link>
               </MenuItem>
-              <MenuItem icon={<FaCalendarCheck />}>Follow-Ups</MenuItem>
-              <MenuItem icon={<FaStar />}>Reviews</MenuItem>
               <MenuItem icon={<FiSettings />}>
                 <Link to={"/settings?email=" + email}>Settings</Link>
               </MenuItem>
               <MenuItem icon={<FaCalendar />}>
-                <Link to={"/schedular?email=" + email}>scheduler</Link>
+                <Link to={"/schedular?email=" + email}>Scheduler</Link>
               </MenuItem>
               <button className="dashboard__btn" onClick={logout}>
                 <MenuItem icon={<FiLogOut />}>
