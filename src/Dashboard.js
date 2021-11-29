@@ -1180,21 +1180,16 @@ function Dashboard() {
               {menuCollapse ? <FiArrowRightCircle /> : <FiArrowLeftCircle />}
             </div>
             <Menu iconShape="square">
-              <MenuItem icon={<FaUser />}>
+              <MenuItem icon={<FaUser />} backgroundColor="red">
                 <Link to={"/profile_pg_gen?email=" + email}>Profile</Link>
               </MenuItem>
-              <MenuItem icon={<FaCalendar />}>
+              <MenuItem icon={<FaCalendarCheck />}>
                 <Link to={"/appointments_gen?email=" + email}>
                   Appointments
                 </Link>
               </MenuItem>
-              <MenuItem icon={<FaCalendarCheck />}>Follow-Ups</MenuItem>
-              <MenuItem icon={<FaStar />}>Reviews</MenuItem>
               <MenuItem icon={<FiSettings />}>
                 <Link to={"/settings?email=" + email}>Settings</Link>
-              </MenuItem>
-              <MenuItem icon={<FaCalendar />}>
-                <Link to={"/schedular?email=" + email}>Scheduler</Link>
               </MenuItem>
               <button className="dashboard__btn" onClick={logout}>
                 <MenuItem icon={<FiLogOut />}>
